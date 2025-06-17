@@ -28,25 +28,25 @@ string multiply(string num1, string num2) {
     
     for(int i = len1 - 1; i >= 0; i--) {
         for(int j = len2 - 1; j >= 0; j--) {
-            int mul = (num1[i] - '0') * (num2[j] - '0');
-            int sum = result[i + j + 1] + mul;
+            int mul = (num1[i] - '0') * (num2[j] - '0'); // Chuyển đổi về số nguyên và tính tích 2 số
+            int sum = result[i + j + 1] + mul; // Tính tổng của tích và số ở vị trí hiện tại
             
-            result[i + j + 1] = sum % 10;
-            result[i + j] += sum / 10;
+            result[i + j + 1] = sum % 10; // Lưu phần dư vào vị trí hiện tại
+            result[i + j] += sum / 10; // Lưu phần nhớ để cộng vào vị trí tiếp theo
         }
     }
     
     string res = "";
     bool leadingZero = true;
     
-    for(int i = 0; i < result.size(); i++) {
-        if(result[i] != 0 || !leadingZero) {
-            leadingZero = false;
-            res += (result[i] + '0');
+    for(int i = 0; i < result.size(); i++) { 
+        if(result[i] != 0 || !leadingZero) { // Nếu số khác 0 hoặc không phải số 0 đầu tiên
+            leadingZero = false; // Đánh dấu đã gặp số khác 0
+            res += (result[i] + '0'); // Chuyển đổi về chuỗi và thêm vào kết quả
         }
     }
     
-    return res.empty() ? "0" : res;
+    return res.empty() ? "0" : res; // Nếu kết quả là chuỗi rỗng thì trả về "0", ngược lại thì trả về kết quả
 }
 
 int main() {

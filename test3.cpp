@@ -18,12 +18,12 @@ using namespace std;
 
 int findDeleteIndex(string s) {
     int iN = s.size();
-    for (int i = 0; i < iN - 1; i++) {
-        if (s[i] > s[i + 1]) {
-            return i;
+    for (int i = 0; i < iN - 1; i++) { // Duyệt từ trái sang phải
+        if (s[i] > s[i + 1]) { // Nếu số đứng trước lớn hơn số đứng sau
+            return i; // Trả về vị trí số cần xóa
         }
     }
-    return iN - 1;
+    return iN - 1; // Nếu không tìm được vị trí số lớn nhất để xóa, trả về vị trí cuối cùng
 }
 
 int main() {

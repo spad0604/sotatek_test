@@ -22,14 +22,18 @@ int iN, iC, iM;
 int main() {
     cin >> iN >> iC >> iM;
     
-    int totalCandies = iN / iC;
-    int wrappers = totalCandies;
+    int totalCandies = iN / iC; // Số kẹo ban đầu Bob có thể mua
+    int wrappers = totalCandies; // Số giấy gói kẹo Bob có
     
-    while (wrappers >= iM) {
-        int newCandies = wrappers / iM;
-        totalCandies += newCandies;
-        wrappers = wrappers % iM + newCandies;
+    while (wrappers >= iM) { // Lặp lại cho đến khi số giấy gói không đủ để đổi kẹo
+        int newCandies = wrappers / iM; // Số kẹo mới Bob có thể nhận được
+        totalCandies += newCandies; // Cộng số kẹo mới vào tổng số kẹo
+        wrappers = wrappers % iM + newCandies; // Cập nhật số giấy gói kẹo còn lại
     }
+
+    /*
+        Để an toàn thì em duyệt như trên, có thể in trực tiếp ra (iN / iC) / iM + (iN / iC)
+    */
     
     cout << totalCandies;
 }
