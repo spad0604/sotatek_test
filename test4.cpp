@@ -14,6 +14,20 @@ Algorithm:
 4. In ra số kẹo tối đa mà Bob có thể nhận được
 */
 
+/* Mã giả
+Input: iN, iC, iM
+Algorithm:
+    - totalCandies <- iN / iC
+    - wrappers <- totalCandies
+    - while (wrappers >= iM) 
+        do {
+            - newCandies <- wrappers / iM
+            - totalCandies <- totalCandies + newCandies
+            - wrappers <- wrappers % iM + newCandies
+        }
+    - In ra totalCandies
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 

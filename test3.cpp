@@ -13,6 +13,24 @@ Algorithm:
 
 */
 
+/* Mã giả
+Input: s
+Algorithm:
+    function findDeleteIndex(s)
+        - iN <- s.size() - 1
+        - for (i <- 0 to iN - 1)
+            do {
+                - if (s[i] > s[i + 1]) {
+                    - Trả về i
+                }
+            }
+        - Trả về iN - 1
+    main()
+    - indexToRemove <- findDeleteIndex(s)
+    - result <- s.substr(0, indexToRemove) + s.substr(indexToRemove + 1)
+    - In ra indexToRemove và result
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

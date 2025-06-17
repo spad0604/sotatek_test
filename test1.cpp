@@ -14,6 +14,46 @@ Algorithm:
 5. In ra sResult[n]
 */
 
+/* Mã giả
+Input: iN
+Algorithm:
+    function multiply(num1, num2)
+        - len1 <- num1.size()
+        - len2 <- num2.size()
+        - result <- vector<int>(len1 + len2, 0)
+        - for (i <- len1 - 1 to 0)
+            do {
+                - for (j <- len2 - 1 to 0)
+                    do {
+                        - mul <- (num1[i] - '0') * (num2[j] - '0')
+                        - sum <- result[i + j + 1] + mul
+                        - result[i + j + 1] <- sum % 10
+                        - result[i + j] <- result[i + j] + sum / 10
+                    }
+        - res <- ""
+        - leadingZero <- true
+        - for (i <- 0 to result.size() - 1)
+            do {
+                - if (result[i] != 0 || !leadingZero)
+                    - leadingZero <- false
+                    - res <- res + result[i]
+            }   
+        - Trả về res.empty() ? "0" : res
+    main()
+
+    - If (iN < 0)
+        - In ra "Error: n is negative"
+    - If (iN == 0)
+        - In ra "1"
+    - else
+        - sResult[0] <- "1"
+        - for (i <- 1 to iN)
+            do {
+                - sResult[i] <- multiply(sResult[i-1], to_string(i))
+            }
+        - In ra sResult[iN]
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 

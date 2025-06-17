@@ -12,6 +12,28 @@ Algorithm:
     - Nếu iN là số chính phương thì chỉ cộng i vào iResult (Vì nếu iN là số chính phương thì i = iPair)
 3. Nếu tổng các ước bằng n (iResult == iN), thì n là số hoàn hảo, ngược lại thì n không phải là số hoàn hảo
 */
+
+/* Mã giả
+Input: iN
+Algorithm:
+    - Nếu (iN <= 0)
+        - In ra "Error: n must be positive"
+    - else
+        - iResult <- 0
+        - for (i <- 1 to sqrt(iN))
+            do {
+                - if (iN % i == 0)
+                    - iPair <- iN / i
+                    - if (i != iPair)
+                        - if (i != iN) iResult <- iResult + i
+                        - if (iPair != iN) iResult <- iResult + iPair
+                    - else
+                        - if (i != iN) iResult <- iResult + i
+        - if (iResult == iN)
+            - In ra "n is a perfect number"
+        - else
+            - In ra "n is not a perfect number"
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
